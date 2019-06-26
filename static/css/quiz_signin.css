@@ -1,0 +1,54 @@
+.signupbox{
+	position: absolute;
+	left: 50%;
+	top:65%;
+	transform: translate(-50%,-50%);
+	/*display: block;*/
+	background-color: rgba(204,204,204,.4);
+	width: 30%;
+	height: 60%;
+	border-radius: 10px;
+	/*margin-top: 50px;*/
+}
+.signupbox input{
+	display: block;
+	/*margin:10px;*/
+	margin:0 auto;
+	margin-top:20px;
+	margin-bottom: 20px;
+	padding: 10px;
+	border-radius: 10px;
+	border:1px solid black;
+	background-color: #cccccc;
+	/*position: relative;*/
+	/*top:50%;
+	left: 50%;
+	transform: translate(-50%,-50%);*/
+	/*text-align: center;*/
+	/*margin: 20px;*/
+	width: 80%;
+	text-transform: uppercase;
+	outline: none;	
+}
+input[type="submit"]{
+	width:30%;
+	background-image: linear-gradient(to bottom,rgba(255,127,80,1),rgba(255,127,80,.7));
+	cursor: pointer;
+	font-family: mntl;
+	font-weight: 600;
+	/*background-color: #ff6666;*/
+}
+::placeholder{
+	color: black;
+	font-family: mntl;
+}
+input::before{
+	content: "\2022";
+}
+/*#ff6666*/
+/*#cccccc*/
+/*#ffffff*/
+.signn{
+	background-image:linear-gradient(to top,rgba(0,0,0,.7),rgba(0,0,0,.2)) !important;
+	color:white !important;
+}

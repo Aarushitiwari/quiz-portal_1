@@ -1,0 +1,126 @@
+@font-face{
+	font-family: arca;
+	src:url('H:\\Project\\quiz_portal_1\\static\\fonts\\Arca.otf');
+}
+@font-face{
+	font-family: mntl;
+	src:url('H:\\Project\\quiz_portal_1\\static\\fonts\\ntailu.ttf');
+}
+*{
+
+	margin:0 ;
+	padding: 0;
+	box-sizing: border-box;
+}
+html{
+	height: 100%;
+}
+body{
+	background-image: url('H:\\Project\\quiz_portal_1\\static\\img\\orange.jpg');
+	/*background-repeat: no-repeat;*/
+	/*background-size: cover;*/
+	/*background-position: center;*/
+	/*background-color: black;*/
+	/*text-transform: uppercase;*/
+}
+.box{
+	background-image: url('H:\\Project\\quiz_portal_1\\static\\img\\white_background_.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	position: absolute;
+	left:50%;
+	top: 50%;
+	color: black;
+	transform: translate(-50%,-50%);
+	width:85%;
+	height: 85%;
+}
+.top{
+	margin:10px;
+}
+.top button{
+	font-family: mntl;
+	font-weight: 600;
+	cursor: pointer;
+	float: right;
+	margin-top:20px;
+	margin-bottom:20px;
+	margin-right:10px;
+	width:75px;
+	border-radius: 10px;
+	border:none;
+	height: 25px;
+	outline: none;
+	background-image: linear-gradient(to top,rgba(255,127,80,1),rgba(255,127,80,.5));
+	text-transform: uppercase;
+}
+/*.top::after{
+	content: "MMIL";
+	position: absolute;
+	color: black;
+	top:30px;
+	font-family: 'arca';
+*/	/*left: 60px;*/
+	/*vertical-align:middle;*/
+/*}*/
+.center{
+	border-top:2px solid #cdcdcd;
+	border-bottom: 2px solid #cdcdcd;
+	height: 75px;
+	text-align: center;
+}
+.info-1 a,.info-2 a{
+	position: absolute;
+	display: inline;
+	/*background-color: red;*/
+	text-decoration: none;
+	color:black;
+	font-size: 28px;
+	top:90px;
+	font-family: mntl;
+	/*margin:20px;*/
+	/*display: inline;*/
+}
+.about{
+	position: absolute;
+	left:calc(50% - 50px);
+}
+/*.active .about{
+	border-bottom: 2px solid red;
+}
+.active .event{
+	border-bottom: 2px solid red;
+}
+*/
+.event{
+	position: relative;
+	left:75%;
+}
+
+
+
+/*.center .info a{*/
+	/*position: relative;*/
+	/*display: inline;*/
+	/*position: absolute;*/
+	/*text-decoration: none;*/
+	/*outline: none;*/
+	/*color:black;*/
+	/*font-size: 25px;*/
+	/*top:100px;*/
+	/*display: inline;*/
+	/*margin-right: 10px;*/
+	/*margin:10px;*/
+	/*margin: 0px 10px;*/
+	/*font-family: arca;*/
+/*}*/
+.box .top a{
+	position: absolute;
+	/*top:5px;*/
+	top:30px;
+	text-decoration: none;
+	color:black;
+	/*vertical-align: text-top;*/
+	font-family: arca;
+}

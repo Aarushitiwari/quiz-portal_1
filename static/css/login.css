@@ -47,3 +47,19 @@ input[type="submit"]{
 	background-image: linear-gradient(to top,rgba(0,0,0,.7),rgba(0,0,0,.2)) !important;
 	color:white !important;
 }
+@media (max-width: 572px){
+	.signupbox{
+	top:70%;
+	width: 90%;
+	height: 55%;
+	overflow-y: scroll;
+}
+	.signupbox input{
+	margin-top:60px;
+	margin-bottom: -40px;
+}
+	input[type="submit"]{
+	width:30%;
+}
+
+}

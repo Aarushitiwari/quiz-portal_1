@@ -124,3 +124,12 @@ body{
 	/*vertical-align: text-top;*/
 	font-family: arca;
 }
+@media(max-width: 572px){
+	.top button{
+		width:60px;
+}
+	.info-1 a,.info-2 a{
+	font-size: 20px;
+	top:100px;
+}	
+}

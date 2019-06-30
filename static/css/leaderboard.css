@@ -55,5 +55,6 @@
 }
 .left{
 	left:10px;
+	display: grid;
 }
 }

@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
 <head>
@@ -21,10 +22,10 @@
 	</div>
 	<div class="center">
 		<div class="info-1 active">
-			<a href='#' class="event" onclick="changeactive()">About</a>
+			<a href='/' class="event" onclick="changeactive()">About</a>
 		</div>
 		<div class="info-2">
-			<a href="#" class="about" onclick="changeactive()">Events</a>
+			<a href="/events" class="about" onclick="changeactive()">Events</a>
 		</div>	
 		<!-- <a href="#">About</a> -->
 	</div>
@@ -34,18 +35,18 @@
 		<div class="header">Event 1</div>
 		<p>Un message logiciel derve indiquant qu'il s'est produit quelque chose.</p>
 		<a href="#" class="links"><i class="fas fa-globe"></i></a><span class="links">http:///www.kmax.com/</span>
-		<div><a href="#"><button type="button" class="btn btn-secondary">Join Now</button></a></div>
+		<div><a href="/quiz"><button type="button" class="btn btn-secondary">Join Now</button></a></div>
 	</div>
 
 	<div class="events">
 		<div class="header">Event 2</div>
 		<p>Un message logiciel derve indiquant qu'il s'est produit quelque chose.</p>
 		<a href="#" class="links"><i class="fas fa-globe"></i></a><span class="links">http:///www.kmax.com/</span>
-		<div><button type="button" class="btn btn-secondary">Join Now</button></div>
+		<div><a href="/quiz"><button type="button" class="btn btn-secondary">Join Now</button></a>a></div>
 	</div>
 </div>
 </div>
 
-<script src="app.js"></script>
+<script src="{% static 'js/app.js' %}"></script>
 </body>
 </html>

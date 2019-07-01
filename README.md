@@ -1,1 +1,0 @@
-# quiz-portal_1

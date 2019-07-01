@@ -2,11 +2,11 @@ function signup() {
 	// body...
 	// var sign=document.querySelector('.signinn');
 	// sign.style.background= 'linear-gradient(to top,rgba(0,0,80,1),rgba(255,127,80,.5))';
-	location.href='H:\\Project\\quiz_portal_1\\templates\\quiz_signup.html';
+	location.href='/signup';
 }
 function login() {
 	// body...
-	location.href='H:\\Project\\quiz_portal_1\\templates\\login.html';
+	location.href='/login';
 }
 
 // function changeactive() {

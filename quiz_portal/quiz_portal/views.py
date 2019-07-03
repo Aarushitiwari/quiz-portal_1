@@ -2,6 +2,9 @@ from django.shortcuts import render, redirect
 from django.contrib.auth import get_user_model, authenticate, login, logout
 from user_detail.models import Profile
 #from verify.models import verification
+from events.models import Event
+from level.models import ParticipantLevel
+from questions.models import question_model
 
 
 User=get_user_model()
@@ -10,7 +13,11 @@ def dash(request):
 	return render(request,'dashboard.html',{})
 
 def events(request):
-	return render(request,'events.html',{})
+	e=Event.objects.all()
+	context = {
+		'eve':e
+	}
+	return render(request,'events.html',context)
 
 def leader(request):
 	return render(request,'leaderboard.html',{})

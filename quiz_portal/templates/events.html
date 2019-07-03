@@ -35,14 +35,16 @@
 	</div>
 	
 	<div class="list">
+	{% for i in eve %}	
 	<div class="events">
-		<div class="header">Event 1</div>
-		<p>Un message logiciel derve indiquant qu'il s'est produit quelque chose.</p>
-		<a href="#" class="links"><i class="fas fa-globe"></i></a><span class="links">http:///www.kmax.com/</span>
+		<div class="header">{{ i.event_name }}</div>
+		<p>{{ i.event_description }}</p>
+		<a href="#" class="links"><i class="fas fa-globe"></i></a><span class="links">{{ i.event_url }}</span>
 		<div><a href="/quiz"><button type="button" class="btn btn-secondary">Join Now</button></a></div>
 	</div>
+	{% endfor %}
 
-	<div class="events">
+	<!--<div class="events">
 		<div class="header">Event 2</div>
 		<p>Un message logiciel derve indiquant qu'il s'est produit quelque chose.</p>
 		<a href="#" class="links"><i class="fas fa-globe"></i></a><span class="links">http:///www.kmax.com/</span>
@@ -53,7 +55,7 @@
 		<p>Un message logiciel derve indiquant qu'il s'est produit quelque chose.</p>
 		<a href="#" class="links"><i class="fas fa-globe"></i></a><span class="links">http:///www.kmax.com/</span>
 		<div><a href="/quiz"><button type="button" class="btn btn-secondary">Join Now</button></a></div>
-	</div>
+	</div>-->
 </div>
 </div>
 

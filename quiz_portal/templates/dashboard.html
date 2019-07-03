@@ -13,8 +13,12 @@
 <div class="box">
 	<div class="top">
 		<img src="/static/img/mmil_logo.jpg" width="50px"><a href="/dashboard">MMIL</a>
-		<button onclick='signup()'>Sign Up</button>
+		{% if request.user.is_authenticated %}
+		<a href="/logout"><button class="button">Log Out</button></a>
+		{% else %}
 		<button onclick="login()">Log In</button>
+		<button class="signn" onclick="signup()">Sign Up</button>
+		{% endif %}
 	</div>
 	<div class="center">
 		<div class="info-1 active">

@@ -18,7 +18,7 @@ def leader(request):
 def login_page(request):
 	if request.user.is_authenticated:
 		return redirect('/events')
-	else:	
+	else:
 		context={
 		'login':False
 		}

@@ -27,12 +27,17 @@
 	</div>
 	<div class="bottom">
 		<div class="signupbox">
-			<form>
-				<input type="text" name="username" required="" placeholder="FULL NAMe">
+			<form method="POST">
+				{% csrf_token %}
+				<input type="text" name="username" required="" placeholder="USER NAME">
+				<input type="email" class="form-controll" name="email" id="inputEmail3" placeholder="Email" required>
 				<input type="text" name="branch" required="" placeholder="Branch">
 				<input type="text" name="year" required="" placeholder="Year">
 				<input type="text" name="college" required="" placeholder="College">
+				<input type="text" pattern="[0-9]{10}" class="form-controll" name="contact" title="Please enter a 10 digit Number" id="inputEmail3" placeholder="Contact No" required>
+				<input type="password" name="password" required="" placeholder="password">
 				<input type="submit" name="submit" value="Submit">
+				
 			</form>
 		</div>
 	</div>

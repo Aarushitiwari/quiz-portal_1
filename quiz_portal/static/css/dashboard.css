@@ -32,9 +32,11 @@ body{
 	left:50%;
 	top: 50%;
 	color: black;
+	/*margin: 0 auto;*/
 	transform: translate(-50%,-50%);
 	width:85%;
-	height: 85%;
+	height: 90%;
+	overflow-y: scroll;
 }
 .top{
 	margin:10px;

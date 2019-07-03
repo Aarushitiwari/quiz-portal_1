@@ -1,8 +1,10 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import get_user_model, authenticate, login, logout
-#from user_detail.models import Profile
+from user_detail.models import Profile
 #from verify.models import verification
 
+
+User=get_user_model()
 
 def dash(request):
 	return render(request,'dashboard.html',{})
@@ -40,8 +42,36 @@ def signup(request):
 		college = request.POST.get("college")
 		contact_num = request.POST.get("contact")
 		password = request.POST.get("password")
+		try:
+			new_user=User.objects.create_user(
+				username=username,
+				email=email,
+				password=password
 
-	return render(request,'quiz_signup.html',{})
+				)
+		except:
+			context['exist']=True
+			return render(request,"quiz_signup.html",context)
+		new=Profile.objects.create(
+			leader=new_user,
+			username=username,
+			email=email,
+			contact=contact_num,
+			password=password,
+			branch=branch,
+			year=year,
+			college=college
+			)
+		new.save()
+		login(request,new_user)
+
+		return redirect('/events')
+	else:
+		context = {
+			"bool":True
+		}
+
+	return render(request,'quiz_signup.html',context)
 
 def quiz(request):
 	return render(request, 'quiz.html',{})

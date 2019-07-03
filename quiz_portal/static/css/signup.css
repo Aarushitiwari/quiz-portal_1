@@ -1,12 +1,12 @@
 .signupbox{
 	position: absolute;
 	left: 50%;
-	top:60%;
+	top:62.5%;
 	transform: translate(-50%,-50%);
 	/*display: block;*/
 	background-color: rgba(204,204,204,.4);
 	width: 30%;
-	height: 65%;
+	height: 72.5%;
 	border-radius: 10px;
 	padding-top: 30px;
 	/*margin-top: 20px;*/

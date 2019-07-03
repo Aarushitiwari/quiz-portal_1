@@ -86,6 +86,9 @@ p {
 	/*vertical-align: text-top;*/
 	font-family: arca;
 }
+.box{
+		overflow-y: scroll;
+}
 
 @media (max-width: 572px){
 	.list {

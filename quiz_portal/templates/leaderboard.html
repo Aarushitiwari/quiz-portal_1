@@ -22,7 +22,7 @@
 	</div>
 	<div class="center">
 		<div class="info-1 active">
-			<a href="/" class="about" onclick="changeactive()">About</a>
+			<a href="/quiz" class="about" onclick="changeactive()">{{ event_name }}</a>
 		</div>
 		<div class="info-2">
 			<a href='/events' class="event" onclick="changeactive()">Events</a>
@@ -31,18 +31,13 @@
 	</div>
 	<div class="bottom">
 		<div class="leaderboard">
+		{% for i in list %}
 		<div class="block">
-			<div class="left">1.Virat</div>
-			<div class="right">125</div>
+			<div class="left">{{ i.participant }}</div>
+			<div class="right">{{ i.points }}</div>
 		</div>
-		<div class="block">
-			<div class="left">1. Virat</div>
-			<div class="right">125</div>
-		</div>
-		<div class="block">
-			<div class="left">1. Virat</div>
-			<div class="right">125</div>
-		</div>
+		{% endfor %}
+		<!--
 		<div class="block">
 			<div class="left">1. Virat</div>
 			<div class="right">125</div>
@@ -75,6 +70,14 @@
 			<div class="left">1. Virat</div>
 			<div class="right">125</div>
 		</div>
+		<div class="block">
+			<div class="left">1. Virat</div>
+			<div class="right">125</div>
+		</div>
+		<div class="block">
+			<div class="left">1. Virat</div>
+			<div class="right">125</div>
+		</div>-->
 	</div>
 	</div>
 </div>

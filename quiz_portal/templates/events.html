@@ -40,7 +40,12 @@
 		<div class="header">{{ i.event_name }}</div>
 		<p>{{ i.event_description }}</p>
 		<a href="#" class="links"><i class="fas fa-globe"></i></a><span class="links">{{ i.event_url }}</span>
-		<div><a href="/quiz"><button type="button" class="btn btn-secondary">Join Now</button></a></div>
+		<form method="POST" action="/quiz/">
+			{% csrf_token %}
+			<div>
+				<input type="submit" name="event_name" value="{{ i.event_name }}">
+			</div>
+		</form>
 	</div>
 	{% endfor %}
 

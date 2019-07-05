@@ -15,4 +15,4 @@ class ParticipantLevel(models.Model):
 	class Meta:
 		ordering=['-points','lastsub']
 	def __str__(self):
-		return self.level
+		return self.participant.username+", "+self.participant_event.event_name

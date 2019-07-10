@@ -49,7 +49,9 @@ def login_page(request):
 				login(request,user)
 				#pro=Profile.objects.get(username=username)
 				return redirect('/events')
-		return render(request,'login.html',{})
+			else:
+				context['login']=True
+		return render(request,'login.html',context)
 
 def signup(request):
 	if request.user.is_authenticated:

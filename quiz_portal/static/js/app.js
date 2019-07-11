@@ -9,6 +9,10 @@ function login() {
 	location.href='/login';
 }
 
+function logout() {
+	// body...
+	location.href='/logout';
+}
 // function changeactive() {
 	// body...
 	// document.querySelector('.info-1').classList.toggle('active');

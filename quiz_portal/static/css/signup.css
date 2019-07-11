@@ -12,6 +12,10 @@
 	padding-top: 30px;
 	/*margin-top: 20px;*/
 	/*margin-top: 50px;*/
+	transition: background-image 5s;
+}
+.signupbox:hover{
+	background-image: linear-gradient(to bottom,rgba(255,127,80,1),rgba(255,127,80,.3));
 }
 .signupbox input{
 	display: block;
@@ -31,7 +35,8 @@
 	/*margin: 20px;*/
 	width: 80%;
 	text-transform: uppercase;
-	outline: none;	
+	outline: none;
+	transition: .5s;	
 }
 input[type="submit"]{
 	width:30%;
@@ -41,13 +46,15 @@ input[type="submit"]{
 	font-weight: 600;
 	/*background-color: #ff6666;*/
 }
+input[type="submit"]:hover{
+	background-image: linear-gradient(to top,rgba(0,0,0,.7),rgba(0,0,0,.2)) !important;
+	color:white;
+}
 ::placeholder{
 	color: black;
 	font-family: mntl;
 }
-input::before{
-	content: "\2022";
-}
+
 /*#ff6666*/
 /*#cccccc*/
 /*#ffffff*/
@@ -56,19 +63,27 @@ input::before{
 	color:white !important;
 }
 
-@media (max-width: 572px){
+@media (max-width: 500px){
 	.signupbox{
-	top:70%;
+	top:65%;
 	width: 90%;
-	height: 55%;
+	height: 65%;
+	padding-top: 20px;
+	/*padding-bottom: 20px;*/
+	/*padding-bottom: 10px;*/
 	overflow-y: scroll;
 }
-	.signupbox input{
-	margin-top:60px;
-	margin-bottom: -40px;
 }
-	input[type="submit"]{
-	width:30%;
+@media screen and (min-width: 501px ) and (max-width:1024px) {
+	.signupbox{
+	top:65%;
+	width: 60%;
+	height: 65%;
+	/*padding-bottom: 60px;*/
+	/*margin-bottom: 10px;*/
+	/*padding-bottom: 10px;*/
+	/*height: 50%;*/
+	overflow-y: scroll;
 }
 
 }

@@ -62,6 +62,7 @@ body{
 	color:white;
 	transform: translateY(-2px);
 }
+
 /*.top::after{
 	content: "MMIL";
 	position: absolute;
@@ -88,6 +89,9 @@ body{
 	font-family: mntl;
 	/*margin:20px;*/
 	/*display: inline;*/
+}
+.info-1 a:hover,.info-2 a:hover{
+	color:#ff6600;
 }
 .about{
 	position: absolute;
@@ -133,7 +137,7 @@ body{
 }
 
 
-@media(max-width: 572px){
+@media(max-width: 500px){
 	.top button{
 		width:60px;
 }

@@ -21,7 +21,7 @@
 	color: #ff8533;
 	border-radius: 6px;
 	border:1px solid #cccccc;
-	box-shadow: 1px 1px;
+	box-shadow: 0 0 5px #ff8533;
 	text-align: center;
 	transition:1s;
 }
@@ -113,7 +113,7 @@ input[type="submit"]{
 	text-transform: uppercase;
 }
 
-@media (max-width: 572px){
+@media (max-width: 500px){
 	.list {
 		overflow: hidden;
 		overflow-y: scroll;
@@ -123,5 +123,32 @@ input[type="submit"]{
 		
 		width: 90%;
 		margin-left: 5%;
+	}
+}
+
+@media screen and (min-width: 501) and (max-width: 768px){
+	.list {
+		overflow: hidden;
+		overflow-y: scroll;
+	}
+	.events {
+	}
+}
+
+@media screen and (min-width: 769) and (max-width: 1024px){
+	.list {
+		overflow: hidden;
+		overflow-y: scroll;
+	}
+	.events {
+	}
+}
+
+@media screen and (min-width: 1025) and (max-width: 1440px){
+	.list {
+		overflow: hidden;
+		overflow-y: scroll;
+	}
+	.events {
 	}
 }

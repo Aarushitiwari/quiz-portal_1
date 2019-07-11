@@ -22,12 +22,17 @@
 	border-radius: 6px;
 	border:1px solid #cccccc;
 	box-shadow: 1px 1px;
+	text-align: center;
+	transition:1s;
+}
+.events:hover{
+	transform:translateY(-5px);
 }
 
 .list {
 	width: 100%;
 	display: block;
-	margin: 0 auto;
+	margin: 25px auto;
 }
 
 i {
@@ -74,6 +79,7 @@ p {
 
 .links:hover {
 	color:#ff6600;
+	cursor: pointer;
 }
 
 
@@ -88,6 +94,23 @@ p {
 }
 .box{
 		overflow-y: scroll;
+}
+
+input[type="submit"]{
+	font-family: mntl;
+	font-weight: 600;
+	cursor: pointer;
+	/*float: right;*/
+	margin-top:20px;
+	/*margin-bottom:20px;*/
+	/*margin-right:10px;*/
+	width:75px;
+	border-radius: 10px;
+	border:none;
+	height: 25px;
+	outline: none;
+	background-image: linear-gradient(to top,rgba(255,127,80,1),rgba(255,127,80,.5));
+	text-transform: uppercase;
 }
 
 @media (max-width: 572px){

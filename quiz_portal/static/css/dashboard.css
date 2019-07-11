@@ -35,7 +35,7 @@ body{
 	/*margin: 0 auto;*/
 	transform: translate(-50%,-50%);
 	width:85%;
-	height: 90%;
+	height: 95%;
 }
 .top{
 	margin:10px;
@@ -55,6 +55,12 @@ body{
 	outline: none;
 	background-image: linear-gradient(to top,rgba(255,127,80,1),rgba(255,127,80,.5));
 	text-transform: uppercase;
+	transition: 1s;
+}
+.top button:hover{
+	background-image: linear-gradient(to top,rgba(0,0,0,.7),rgba(0,0,0,.2));
+	color:white;
+	transform: translateY(-2px);
 }
 /*.top::after{
 	content: "MMIL";
@@ -125,6 +131,8 @@ body{
 	/*vertical-align: text-top;*/
 	font-family: arca;
 }
+
+
 @media(max-width: 572px){
 	.top button{
 		width:60px;

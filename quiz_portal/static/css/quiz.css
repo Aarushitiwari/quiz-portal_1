@@ -9,6 +9,7 @@
 	color: #737373;
 	border-radius: 6px;
 	border:1px solid #737373;
+	text-align: center;
 }
 
 .about{
@@ -20,6 +21,7 @@
 	position: relative;
 	background-color: transparent;
 	border: none;
+	outline: none;
 }
 
 .btn1:hover {
@@ -29,6 +31,7 @@
 /*.center .info-1, .center .info-2 {
 	display: inline-block;
 }*/
+
 
 .info-1 {
 	position: absolute;

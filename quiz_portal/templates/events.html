@@ -39,7 +39,7 @@
 	<div class="events">
 		<div class="header">{{ i.event_name }}</div>
 		<p>{{ i.event_description }}</p>
-		<a href="#" class="links"><i class="fas fa-globe"></i></a><span class="links">{{ i.event_url }}</span>
+		<span class="new"><a href="#" class="links"><i class="fas fa-globe"></i></a><span class="links">{{ i.event_url }}</span></span>
 		<form method="POST" action="/quiz/">
 			{% csrf_token %}
 			<div>

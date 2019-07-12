@@ -40,7 +40,8 @@ i {
 	width: 3px;
 	height: 3px;
 	color: black;
-	left: 2%
+	left: 2%;
+	padding-right: 6%;
 }
 
 .header {
@@ -71,7 +72,7 @@ i {
 	background-color: #ff944d;
 }
 
-span {
+span .new {
 	/*margin-left: 6%;*/
 	margin: 0 auto;
 }
@@ -135,7 +136,7 @@ input[type="submit"]{
 		overflow-y: scroll;
 	}
 	.events {
-		width: 70%;
+		width: 80%;
 		margin: 3% auto;
 	}
 }
@@ -146,12 +147,12 @@ input[type="submit"]{
 		overflow-y: scroll;
 	}
 	.events {
-		width: 70%;
+		width: 50%;
 		margin: 3% auto;
 	}
 }
 
-@media screen and (min-width: 1025px) and (max-width: 1440px){
+/*@media screen and (min-width: 1025px) and (max-width: 1440px){
 	.list {
 		overflow: hidden;
 		overflow-y: scroll;
@@ -160,4 +161,4 @@ input[type="submit"]{
 		width: 70%;
 		margin: 3% auto;
 	}
-}
+}*/

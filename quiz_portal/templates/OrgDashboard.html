@@ -7,7 +7,8 @@
 	</title>
 	<meta content="width=device-width, initial-scale=1" name="viewport" />
 	<link rel="stylesheet" type="text/css" href="{% static 'css\dashboard.css' %}">
-	<link rel="stylesheet" type="text/css" href="{% static 'css\signup.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'css\OrgDashboard.css' %}">
+	<link rel="stylesheet" type="text/css" href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
 </head>
 <body>
 <div class="box">
@@ -30,16 +31,23 @@
 		<!-- <a href="#">About</a> -->
 	</div>
 	<div class="bottom">
-		<p>Events</p>
-		<div class="leaderboard">
+		<p>Your Events</p>
+		<div class="container">
+		<!-- <div class="leaderboard"> -->
 		{% for i in event %}
 		<div class="block">
-			<div class="left">{{ i.event_name }}</div>
-			<div class="right">{{ i.event_description }}</div>
+			<div>S.no</div>
+			<div>Name</div>
+			<div>Date</div>
+			<div>Start Time</div>
+			<div><a href="#" class="icon1"><i class="fa fa-edit"></i></a></div>
+			<div  class="btn-delete"><a href="#" class="icon2"><i class="fa fa-times" aria-hidden="true"></i></a></div>
+			<!-- <div>{{ i.event_name }}</div>
+		 <div>{{ i.event_description }}</div> -->
 		</div>
 		{% endfor %}
 		</div>
-		<a href="/addEvent">Add Event</a>
+		<a href="/addEvent" class="icon3"><i class="fa fa-plus-circle" aria-hidden="true"></i></a>
 	</div>
 
 </div>

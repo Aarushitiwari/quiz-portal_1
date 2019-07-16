@@ -1,0 +1,51 @@
+.addevent{
+	width: 60%;
+	margin: 20px auto;
+	background-color: white;
+	padding:30px;
+	text-align: center;
+	transition: 1s;
+	font-family: mntl;
+	font-size: 17.5px;
+	/*display: flex;*/
+}
+.addevent:hover{
+	box-shadow: 0 0 25px black;
+}
+.info{
+	display: table-row;	/*padding: 10px;*/
+	/*vertical-align: middle;*/
+}
+label{
+	display: table-cell;
+}
+input{
+	width: 200px;
+	margin-left: 5px;
+	margin-right: 5px;
+	margin-bottom: 20px;
+	border:none;
+	border-bottom: 2px solid black;
+	outline: none;
+	padding: 2.5px;
+	/*font-size: 15px;*/
+}
+input[type="submit"]{
+	width:25%;
+	background-image: linear-gradient(to bottom,rgba(255,127,80,1),rgba(255,127,80,.7));
+	cursor: pointer;
+	font-family: mntl;
+	font-weight: 600;
+	transition:.5s;
+	border:none;
+	outline: none;
+	padding: 10px;
+}
+input[type="submit"]:hover{
+	background-image: linear-gradient(to top,rgba(0,0,0,.7),rgba(0,0,0,.2)) !important;
+	color:white;
+}
+
+/*input{
+	display: block;
+}*/

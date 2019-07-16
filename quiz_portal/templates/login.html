@@ -39,14 +39,14 @@
 		<div class="signupbox">
 			<form method="POST">
 				{% csrf_token %}
-				<h3>Participant Login</h3>
+				<h2>PARTICIPANT LOGIN</h2>
 				<input type="text" name="username" required="" placeholder="username">
 				<input type="password" name="password" required="" placeholder="password">
 				<input type="submit" name="submit" value="Submit">
 			</form>
+			<a href="/orglogin/"><u>Organiser?</u></a>
 		</div>
 	</div>
-	<a href="/orglogin/">Organiser?</a>
 </div>
 <script src="{% static 'js/app.js' %}"></script>
 </body>

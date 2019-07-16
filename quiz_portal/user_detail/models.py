@@ -16,3 +16,14 @@ class Profile(models.Model):
 
 	def __str__(self):
 		return self.username
+
+class OrganiserProfile(models.Model):
+	organiser=models.BooleanField(default=False)
+	organiser_name=models.CharField(max_length=100)
+	organiser_email=models.EmailField()
+	organiser_contact=models.IntegerField()
+	organiser_events=models.ManyToManyField(Event, blank=True)
+	organiser_password=models.CharField(max_length=100,null=False, blank=False)
+
+	def __str__(self):
+		return self.organiser_name

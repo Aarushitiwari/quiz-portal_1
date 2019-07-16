@@ -18,7 +18,7 @@
 	<div class="top">
 		<img src="/static/img/mmil_logo.jpg" width="50px"><a href="dashboard.html">MMIL</a>
 		{% if request.user.is_authenticated %}
-		<button class="button">Log Out</button>
+		<button class="button" onclick="logout()">Log Out</button>
 		{% else %}
 		<button onclick="login()">Log In</button>
 		<button class="signn" onclick="signup()">Sign Up</button>
@@ -33,7 +33,7 @@
 			</form>
 		</div>
 		<div class="info-2">
-			<a href="#" class="about" onclick="changeactive()">{{ event_name }}</a>
+			<a href="#" class="about">{{ event_name }}</a>
 		</div>	
 		<!-- <a href="#">About</a> -->
 	</div>
@@ -50,5 +50,6 @@
 		</div>
 	</div>
 </div>
+<script src="{% static 'js\app.js' %}"></script>
 </body>
 </html>

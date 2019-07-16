@@ -24,7 +24,7 @@
 	{% endif %}
 <div class="box">
 	<div class="top">
-		<img src="/static/img/mmil_logo.jpg" width="50px"><a href="/dashboard">MMIL</a>
+		<img src="/static/img/mmil_logo.jpg" width="50px"><a href="/">MMIL</a>
 		{% if request.user.is_authenticated %}
 		<button class="button" onclick="logout()">Log Out</button></a>
 		{% else %}
@@ -34,11 +34,17 @@
 	</div>
 	<div class="center">
 		<div class="info-1 active">
-			<a href="/" class="about" onclick="changeactive()">About</a>
+			<a href="/" class="">About</a>
 		</div>
-		<div class="info-2">
-			<a href='/events' class="event" onclick="changeactive()">Events</a>
+		<div class="info-1">
+			<a href='/events' class="">Events</a>
 		</div>	
+		<div class="info-1">
+			<a href='/' class="leaderboard">leaderboard</a>
+		</div>	
+		<div class="info-1">
+			<a href='/contact' class="contact">contact</a>
+		</div>
 		<!-- <a href="#">About</a> -->
 	</div>
 <!-- 	<div class="bottom">

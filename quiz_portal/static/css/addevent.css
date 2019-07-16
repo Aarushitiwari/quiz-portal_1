@@ -15,6 +15,7 @@
 .info{
 	display: table-row;	/*padding: 10px;*/
 	/*vertical-align: middle;*/
+	/*text-align: center;*/
 }
 label{
 	display: table-cell;

@@ -1,4 +1,4 @@
-.event{
+/*.event{
 	position: relative;
 	left:13%;	
 }
@@ -8,7 +8,7 @@
 	right:calc(50% - 50px);
 	
 }
-
+*/
 .events {
 	position: relative;
 	display: block;

@@ -11,7 +11,6 @@ class Event(models.Model):
 	event_start_time = models.TimeField(default=datetime.time(00,00), blank=True)
 	event_end_date = models.DateField(default=timezone.now, blank=True)
 	event_end_time = models.TimeField(default=datetime.time(00,00), blank=True)
-	event_num_ques = models.IntegerField(default=0,blank=True)
 
 
 	def __str__(self):

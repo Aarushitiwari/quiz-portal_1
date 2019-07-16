@@ -195,7 +195,6 @@ def org_add_event(request):
 			temp_start_time=request.POST.get('starttime')
 			temp_end_date=request.POST.get('enddate')
 			temp_end_time=request.POST.get('endtime')
-			e_num_ques=request.POST.get('numques')
 			e_start_date=datetime.datetime.strptime(temp_start_date, "%Y-%m-%d").date()
 			e_start_time=datetime.datetime.strptime(temp_start_time, "%H:%M:%S").time()
 			e_end_date=datetime.datetime.strptime(temp_end_date, "%Y-%m-%d").date()
@@ -208,7 +207,6 @@ def org_add_event(request):
 					event_start_time=e_start_time,
 					event_end_date=e_end_date,
 					event_end_time=e_end_time,
-					event_num_ques=e_num_ques
 					)
 				new_event.save()
 			except:

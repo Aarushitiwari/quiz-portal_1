@@ -36,7 +36,7 @@ body{
 	transform: translate(-50%,-50%);
 	width:85%;
 	height: 95%;
-	overflow-y: scroll;
+	/*overflow-y: scroll;*/
 }
 .top{
 	margin:10px;

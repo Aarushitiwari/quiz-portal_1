@@ -8,6 +8,7 @@
 	<meta content="width=device-width, initial-scale=1" name="viewport" />
 	<link rel="stylesheet" type="text/css" href="{% static 'css\dashboard.css' %}">
 	<link rel="stylesheet" type="text/css" href="{% static 'css\signup.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'css\addquestion.css' %}">
 </head>
 <body>
 	<!--{% if bool %}
@@ -51,9 +52,11 @@
 				<input type="hidden" name="eventname" value="{{ event }}">
 				<input type="submit" name="submit" value="Submit">	
 			</form>
+			<a href="/organiser/">End Adding Questions</a>
 		</div>
+
 	</div>
-	<a href="/organiser/">End Adding Questions</a>
+	
 </div>
 <script src="{% static 'js/app.js' %}"></script>
 </body>

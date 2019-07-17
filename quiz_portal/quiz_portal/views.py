@@ -272,3 +272,6 @@ def event_update(request):
 
 def contact(request):
 	return render(request,'contact.html', {})
+
+def testing(request):
+	return render(request,'testing.html',{})

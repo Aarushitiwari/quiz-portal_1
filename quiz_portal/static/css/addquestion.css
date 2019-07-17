@@ -1,0 +1,9 @@
+.signupbox>a{
+	text-decoration: none;
+	color:black;
+	font-size: 22.5px;
+}
+.signupbox>a:hover{
+	color: blue;
+
+}

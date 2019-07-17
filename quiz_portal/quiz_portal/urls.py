@@ -16,7 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from .views import dash,events,leader,login_page,signup,quiz,logout_page,org_login_page,org_add_event,org_add_question,org_dash,event_delete,event_update,contact
+from .views import dash,events,leader,login_page,signup,quiz,logout_page,org_login_page,org_add_event,org_add_question,org_dash,event_delete,event_update,contact,testing
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -33,6 +33,6 @@ urlpatterns = [
     path('addQuestion/', org_add_question),
     path('deleteEvent/', event_delete),
     path('update/', event_update),
-    path('contact/', contact)
-
+    path('contact/', contact),
+    path('testing/',testing)
 ]

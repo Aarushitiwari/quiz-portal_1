@@ -14,27 +14,21 @@ function logout() {
 	location.href='/logout';
 }
 
-
-
-// var btnContainer = document.getElementById("myDIV");
-
-// Get all buttons with class="btn" inside the container
-// var btns = document.getElementsByClassName("info-1");
-// // document.write(btns.length);
-
-// // Loop through the buttons and add the active class to the current/clicked button
-// for (var i = 0; i < btns.length; i++) {
-//   btns[i].addEventListener("click", function() {
-//     var current = document.getElementsByClassName("active");
-//     current[0].className = current[0].className.replace(" active", "");
-//     this.className += " active";
-//   });
-// }
-// function changeactive() {
-	// body...
-	// document.querySelector('.info-1').classList.toggle('active');
-	// document.querySelector('.info-2').classList.toggle('active');
-	// about.classList.toggle('active');
-	// event.classList.toggle('active');
-	// location.href='H:\\Project\\quiz_portal_1\\templates\\login.html';
-// }
+function swap() {
+	swal({
+  title: "Are you sure?",
+  text: "Once deleted, you will not be able to recover this event!",
+  icon: "warning",
+  buttons: true,
+  dangerMode: true,
+})
+.then((willDelete) => {
+  if (willDelete) {
+    swal("Your event has been deleted!", {
+      icon: "success",
+    });
+  } else {
+    swal("Your event is not deleted!");
+  }
+});
+}

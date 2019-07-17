@@ -38,6 +38,27 @@
 	top: 7.5px;
 }
 
+.btn1{
+	font-family: mntl;
+	font-weight: 600;
+	cursor: pointer;
+	/*float: right;*/
+	/*margin-top:20px;*/
+	/*margin-bottom:20px;*/
+	/*margin-right:10px;*/
+	width:75px;
+	border-radius: 10px;
+	border:none;
+	height: 25px;
+	outline: none;
+	background-image: linear-gradient(to top,rgba(255,127,80,1),rgba(255,127,80,.5));
+	text-transform: uppercase;
+	transition: 1s;
+}
+
+
+
+
 @media (max-width: 500px){
 	.bottom{
 	padding: 10px;

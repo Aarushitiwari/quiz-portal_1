@@ -12,6 +12,14 @@
 .btn-delete{
 	display: none;
 }
+.innerblock{
+	flex: 1;
+}
+
+.container{
+	overflow-y: scroll;
+	height: 375px;
+}
 .block:hover .btn-delete{
 	display: block;
 }

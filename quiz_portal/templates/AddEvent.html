@@ -37,10 +37,7 @@
 			<a href="/" class="">About</a>
 		</div>
 		<div class="info-1">
-			<a href='/events' class="">Events</a>
-		</div>	
-		<div class="info-1">
-			<a href='/' class="leaderboard">leaderboard</a>
+			<a href='/events' class="">Live Events</a>
 		</div>	
 		<div class="info-1">
 			<a href='/contact' class="contact">contact</a>
@@ -64,29 +61,28 @@
 	</div> -->
 	<div class="bottom">
 		<div class="addevent">
-			<form>
-				{% csrf_token %}
+			<form method="POST">
+			{% csrf_token %}
 			<div class="info">
 				<label>Name of Event:</label>
-				<input type="text" name="" required="" />
+				<input type="text" name="name" required="" />
+			</div>
+			<div class="info">
+				<label>Description of Event:</label>
+				<input type="text" name="description" required="" />
 			</div>
 			<div class="info">
 				<label>Starting Date: </label>
-				<input type="Date" name="" required="" />
+				<input type="Date" name="startdate" required="" />
 				<label>Ending Date:</label>
-				<input type="Date" name="" required="" />
+				<input type="Date" name="enddate" required="" />
 				<!-- <label>Name</label><input type="text" name=""> -->
 			</div>
 			<div class="info">
 				<label>Starting time:</label>
-				<input type="time" name="" required="" />
+				<input type="time" name="starttime" required="" />
 				<label>Ending time:</label>
-				<input type="time" name="" required="" />
-				<!-- <label>Name</label><input type="text" name=""> -->
-			</div>
-			<div class="info">
-				<label>No. of Questions:</label>
-				<input type="number" name="" required="" />
+				<input type="time" name="endtime" required="" />
 				<!-- <label>Name</label><input type="text" name=""> -->
 			</div>
 				<input type="submit" name="submit" value="Submit">

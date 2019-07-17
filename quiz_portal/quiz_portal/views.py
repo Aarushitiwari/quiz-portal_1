@@ -196,9 +196,9 @@ def org_add_event(request):
 			temp_end_date=request.POST.get('enddate')
 			temp_end_time=request.POST.get('endtime')
 			e_start_date=datetime.datetime.strptime(temp_start_date, "%Y-%m-%d").date()
-			e_start_time=datetime.datetime.strptime(temp_start_time, "%H:%M:%S").time()
+			e_start_time=datetime.datetime.strptime(temp_start_time, "%H:%M").time()
 			e_end_date=datetime.datetime.strptime(temp_end_date, "%Y-%m-%d").date()
-			e_end_time=datetime.datetime.strptime(temp_end_time, "%H:%M:%S").time()
+			e_end_time=datetime.datetime.strptime(temp_end_time, "%H:%M").time()
 			try:
 				new_event=Event.objects.create(
 					event_name=e_name,
@@ -269,3 +269,6 @@ def event_delete(request):
 
 def event_update(request):
 	pass
+
+def contact(request):
+	return render(request,'contact.html', {})

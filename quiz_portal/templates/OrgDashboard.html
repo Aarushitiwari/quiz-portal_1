@@ -26,10 +26,7 @@
 			<a href="/" class="about">About</a>
 		</div>
 		<div class="info-1">
-			<a href='/events' class="event">Events</a>
-		</div>	
-		<div class="info-1">
-			<a href='/' class="leacerboard">leaderboard</a>
+			<a href='/events' class="event">Live Events</a>
 		</div>	
 		<div class="info-1">
 			<a href='/contact' class="contact">contact</a>
@@ -42,10 +39,11 @@
 		<!-- <div class="leaderboard"> -->
 		{% for i in event %}
 		<div class="block">
-			<div>S.no</div>
-			<div>Name</div>
-			<div>Date</div>
-			<div>Start Time</div>
+			<div>{{ i.event_name }}</div>
+			<div>{{ i.event_start_date }}</div>
+			<div>{{ i.event_end_date }}</div>
+			<div>{{ i.event_start_time }}</div>
+			<div>{{ i.event_end_time }}</div>
 			<div><a href="#" class="icon1"><i class="fa fa-edit"></i></a></div>
 			<div  class="btn-delete"><a href="#" class="icon2"><i class="fa fa-times" aria-hidden="true"></i></a></div>
 			<!-- <div>{{ i.event_name }}</div>

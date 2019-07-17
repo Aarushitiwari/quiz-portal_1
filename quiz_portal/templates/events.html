@@ -46,7 +46,8 @@
 		<form method="POST" action="/quiz/">
 			{% csrf_token %}
 			<div>
-				<input type="submit" name="event_name" value="{{ i.event_name }}">
+				<input type="hidden" name="event_name" value="{{ i.event_name }}">
+				<input type="submit" name="nothing" value="Join Now">
 			</div>
 		</form>
 	</div>

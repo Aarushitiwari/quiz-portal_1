@@ -35,14 +35,15 @@
 	</div>
 	<div class="bottom">
 		<div class="container">
+
 		<!-- <div class="leaderboard"> -->
 		{% for i in event %}
 		<div class="block">
-			<div class="innerblock">{{ i.event_name }}</div>
-			<div class="innerblock">{{ i.event_start_date }}</div>
-			<div class="innerblock">{{ i.event_end_date }}</div>
-			<div class="innerblock">{{ i.event_start_time }}</div>
-			<div class="innerblock">{{ i.event_end_time }}</div>
+			<div class="innerblock" title="Event Name">{{ i.event_name }}</div>
+			<div class="innerblock" title="Event Start Date">{{ i.event_start_date }}</div>
+			<div class="innerblock" title="Event End Date">{{ i.event_end_date }}</div>
+			<div class="innerblock" title="Event Start Time">{{ i.event_start_time }}</div>
+			<div class="innerblock" title="Event End Time">{{ i.event_end_time }}</div>
 			<div class="innerblock"><a href="#" class="icon1"><i class="fa fa-edit"  title="Update"></i></a></div>
 			<div  class="btn-delete" class="innerblock"><a onclick="swap()" href="#" class="icon2"><i class="fa fa-times" aria-hidden="true" title="Delete"></i></a></div>
 			<!-- <div>{{ i.event_name }}</div>

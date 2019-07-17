@@ -1,3 +1,8 @@
+.box {
+	overflow-y: scroll;
+}
+
+
 .quiz {
 	position: relative;
 	display: block;
@@ -12,8 +17,8 @@
 	text-align: center;
 }
 
-.about{
-	position: absolute;
+/*.about{
+	position: relative;
 	right:calc(50% - 50px);
 }
 
@@ -22,35 +27,54 @@
 	background-color: transparent;
 	border: none;
 	outline: none;
-}
+}*/
 
 .btn1:hover {
 	color: #ff6600;
 }
 
-/*.center .info-1, .center .info-2 {
-	display: inline-block;
+/*
+.info {
+	position: absolute;
+	left: 13%;
+}
+
+.center .info-2 {
+	text-align: center;
+}
+
+
+.center .info {
+	float: right;
 }*/
 
-
-.info-1 {
-	position: absolute;
-	left: 75%;
-	margin-top: 13px;
-}
-
-.center .info-1 {
-	float: right;
-}
-
-.info-1 button,.info-2 a{
-	position: absolute;
+/*.info-1 button,.info-2 a{
+	position: relative;
 	display: inline;
 	text-decoration: none;
 	color:black;
 	font-size: 28px;
-	/*top:90px;*/
 	font-family: mntl;
+}*/
+
+.center {
+	width: 100%;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	border-top:2px solid #cdcdcd;
+	border-bottom: 2px solid #cdcdcd;
+	height: 75px;
+}
+
+.center a, .info-1 button, .info-2 p {
+	text-decoration: none; 
+    color: black; 
+    font-size: 28px;
+    font-family: mntl; 
+    text-transform: uppercase; 
+    background-color: transparent;
+    border: none;
 }
 
 h3 {
@@ -112,6 +136,8 @@ input[type=text]:focus{
 }
 
 
+
+
 @media screen (max-width: 500px){
 	.quizzes {
 		overflow: hidden;
@@ -144,14 +170,22 @@ input[type=text]:focus{
 	width:60px;
 	}
 
-	.info-1 {
+	.info-1 button, .info-1 a, .info-2 a, .info-2 p {
+		font-size: 20px;
+	}
+
+	/*.info-1 {
 	position: absolute;
 	left: 75%;
-	margin-top: 23px;
+	
+	}
+
+	.info {
+		left: 15%;
 	}
 
 
-	.info-1 .btn1,.info-2 a{
+	.info-1 .btn1,.info-2 a, .info a{
 	font-size: 20px;
-	}	
+	}	*/
 }

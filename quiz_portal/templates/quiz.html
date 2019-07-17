@@ -25,19 +25,18 @@
 		{% endif %}
 	</div>
 	<div class="center">
-		<div class="info-1 active">
+		<div class="info-1">
+		<a href="/events" class="about">Live Events</a>
+		</div>
+		<div class="info-2">
+			<p class="about">{{ event_name }}</p>
+		</div>	
+		<div class="info-1">
 			<form method="POST" action="/leaderboard/">
 				{% csrf_token %}
 				<input type="hidden" name="event_name" value="{{ event_name }}">
-				<button type="submit" class="btn1">Leaderboard</a></button>
-			</form>
-			<div class="info-1 active">
-			<a href="/events" class="about">Live Events</a>
-		</div>
-		</div>
-		<div class="info-2">
-			<a href="#" class="about">{{ event_name }}</a>
-		</div>	
+				<button type="submit" class="btn1">LEADERBOARD</button>
+			</form></div>
 		<!-- <a href="#">About</a> -->
 	</div>
 	<div class="quizzes">

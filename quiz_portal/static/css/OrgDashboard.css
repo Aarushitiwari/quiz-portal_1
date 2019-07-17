@@ -1,6 +1,10 @@
+.box {
+	overflow: scroll;
+}
+
 .block{
-	margin: 30px;
-	padding:20px;
+	margin: 3%;
+	padding:2%;
 	display:flex;
 	justify-content: space-between;
 	/*background-color: #eee;*/
@@ -18,7 +22,7 @@
 
 .container{
 	overflow-y: scroll;
-	height: 375px;
+	height: 60vh;
 }
 .block:hover .btn-delete{
 	display: block;
@@ -49,6 +53,7 @@ i:active{
 	transform: translateY(5px);
 	/*transform: scaleZ(1.5);*/
 }
+
 .bottom{
 	text-align: center;
 	font-family: mntl;
@@ -56,4 +61,19 @@ i:active{
 
 .bottom p{
 	font-size: 40px;
+}
+
+@media screen and (min-width: 200px) and (max-width: 379px){
+	.block {
+		font-size: 10px;
+	}
+
+}
+
+
+@media screen and (min-width: 380px) and (max-width: 768px){
+	.block {
+		font-size: 15px;
+	}
+
 }

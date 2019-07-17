@@ -1,8 +1,12 @@
+.box {
+	overflow: scroll;
+}
+
 .addevent{
-	width: 60%;
-	margin: 20px auto;
+	width: 40%;
+	margin: 3% auto;
 	background-color: white;
-	padding:30px;
+	padding: 5%;
 	text-align: center;
 	transition: 1s;
 	font-family: mntl;
@@ -12,23 +16,26 @@
 .addevent:hover{
 	box-shadow: 0 0 25px black;
 }
+
 .info{
 	display: table-row;	/*padding: 10px;*/
 	/*vertical-align: middle;*/
 	/*text-align: center;*/
 }
+
+
 label{
 	display: table-cell;
 }
 input{
-	width: 200px;
-	margin-left: 5px;
-	margin-right: 5px;
-	margin-bottom: 20px;
+	width: 90%;
+	margin-left: 2%;
+	margin-right: 2%;
+	margin-bottom: 4%;
 	border:none;
 	border-bottom: 2px solid black;
 	outline: none;
-	padding: 2.5px;
+	padding: 9%;
 	/*font-size: 15px;*/
 }
 input[type="submit"]{
@@ -40,7 +47,8 @@ input[type="submit"]{
 	transition:.5s;
 	border:none;
 	outline: none;
-	padding: 10px;
+	padding:  2%;
+	margin: 4.5%;
 }
 input[type="submit"]:hover{
 	background-image: linear-gradient(to top,rgba(0,0,0,.7),rgba(0,0,0,.2)) !important;
@@ -50,3 +58,26 @@ input[type="submit"]:hover{
 /*input{
 	display: block;
 }*/
+
+/*@media (max-width: 600px){
+	.addevent {
+		width: 40%;
+	}
+
+	input {
+		width: 60%;
+	}	
+
+}*/
+
+@media screen and (min-width: 200px) and (max-width: 768px){
+	.addevent {
+		width: 90%;
+	}
+
+	input {
+		width: 70%;
+	}
+}
+
+

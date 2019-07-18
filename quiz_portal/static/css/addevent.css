@@ -18,7 +18,9 @@
 }
 
 .info{
-	display: table-row;	/*padding: 10px;*/
+	display: table-row;
+	height: 50px;
+	/*padding: 50px;*/
 	/*vertical-align: middle;*/
 	/*text-align: center;*/
 }
@@ -26,6 +28,7 @@
 
 label{
 	display: table-cell;
+
 }
 input{
 	width: 90%;
@@ -35,7 +38,8 @@ input{
 	border:none;
 	border-bottom: 2px solid black;
 	outline: none;
-	padding: 9%;
+	font-size: 15px;
+	/*padding: 9%;*/
 	/*font-size: 15px;*/
 }
 input[type="submit"]{

@@ -96,10 +96,10 @@ p {
 	/*vertical-align: text-top;*/
 	font-family: arca;
 }
-.box{
+/*.box{
 		overflow-y: scroll;
 }
-
+*/
 input[type="submit"]{
 	font-family: mntl;
 	font-weight: 600;

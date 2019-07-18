@@ -33,6 +33,11 @@
 	color: #ff6600;
 }
 
+.info-1 .btn1 {
+	cursor: pointer;
+	outline: none;
+}
+
 /*
 .info {
 	position: absolute;
@@ -117,6 +122,7 @@ input {
 	color: white;
 	padding: 1.5%;
 	border-radius: 0.25rem;
+	cursor: pointer;
 }
 
 .btn-secondary:hover {

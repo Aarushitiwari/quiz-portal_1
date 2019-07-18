@@ -11,6 +11,11 @@
 	<link rel="stylesheet" type="text/css" href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
 </head>
 <body>
+	{% if deleted %}
+		<script type="text/javascript">
+  		alert("Event Deleted 💔💔💔")
+		</script>
+	{% endif %}
 <div class="box">
 	<div class="top">
 		<img src="/static/img/mmil_logo.jpg" width="50px"><a href="/">MMIL</a>
@@ -53,7 +58,16 @@
 				</form>
 
 			</div>
-			<div  class="btn-delete" class="innerblock"><a onclick="swap()" href="#" class="icon2"><i class="fa fa-times" aria-hidden="true" title="Delete"></i></a></div>
+			<div  class="btn-delete" class="innerblock">
+				<form method="POST" action="/deleteEvent/">
+				<!--<a onclick="swap()" href="#" class="icon2">
+					<i class="fa fa-times" aria-hidden="true" title="Delete"></i>
+				</a>-->
+				{% csrf_token %}
+					<input type="hidden" name="eventname" value="{{ i.event_name }}" />
+					<button type="submit" onclick="swap()" class="icon2"><i class="fa fa-times" aria-hidden="true" title="Delete"></i></button>
+				</form>
+			</div>
 			<!-- <div>{{ i.event_name }}</div>
 		 <div>{{ i.event_description }}</div> -->
 		</div>

@@ -303,7 +303,23 @@ def org_add_question(request):
 
 
 def event_delete(request):
-	pass
+	try:
+		org_user=OrganiserProfile.objects.get(organiser_name=request.user.username)
+	except:
+		return redirect('/orglogin')
+	if request.user.is_authenticated and org_user.organiser:
+		if request.method == 'POST':
+			e_name = request.POST.get('eventname')
+			if e_name is None:
+				return redirect('/organiser')
+			instance = Event.objects.filter(event_name=e_name).get()
+			instance.delete()
+			context={
+			'deleted':True
+			}
+			return render(request,'OrgDashboard.html',context)
+
+
 
 
 def event_update(request):
@@ -316,7 +332,7 @@ def event_update(request):
 			e_name = request.POST.get('eventname')
 			if e_name is None:
 				return redirect('/organiser')
-				
+
 			context={
 			'event':e_name,
 			'organiser':True

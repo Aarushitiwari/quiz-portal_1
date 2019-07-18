@@ -59,25 +59,38 @@ input[type="submit"]:hover{
 	display: block;
 }*/
 
-/*@media (max-width: 600px){
+@media screen and (min-width: 349px) and (max-width: 820px){
 	.addevent {
-		width: 40%;
+		width: 60%;
 	}
 
 	input {
-		width: 60%;
+		width: 90%;
 	}	
 
-}*/
+}
 
-@media screen and (min-width: 200px) and (max-width: 768px){
+@media screen and (min-width: 340px) and (max-width: 600px){
 	.addevent {
 		width: 90%;
 	}
 
 	input {
-		width: 70%;
+		width: 90%;
 	}
 }
+
+@media screen and (min-width: 200px) and (max-width: 339px){
+	.addevent {
+		width: 90%;
+	}
+
+	input {
+		width: 60%;
+	}
+}
+
+
+
 
 

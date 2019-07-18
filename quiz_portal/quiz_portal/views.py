@@ -15,24 +15,35 @@ def dash(request):
 
 def events(request):
 	E=Event.objects.all()
+	try:
+		org_user=OrganiserProfile.objects.get(organiser_name=request.user.username)
+		if request.user.is_authenticated and org_user.organiser:
+			org=True
+	except:
+		org=False
 	context = {
-		'eve':E
+		'eve':E,
+		'organiser':org
 	}
 	return render(request,'events.html',context)
 
 def leader(request):
-	if request.user.is_authenticated:
-		if request.method == 'POST':
-			e_name=request.POST.get('event_name')
-			E=Event.objects.filter(event_name=e_name).get()
-			participant_list=ParticipantLevel.objects.filter(participant_event=E)
-			context={
-				"list":participant_list,
-				"event_name":e_name
-			}
-			return render(request,'leaderboard.html',context)
-	else:
-		return redirect('/login')
+	try:
+		org_user=OrganiserProfile.objects.get(organiser_name=request.user.username)
+		return redirect('/organiser')
+	except:
+		if request.user.is_authenticated:
+			if request.method == 'POST':
+				e_name=request.POST.get('event_name')
+				E=Event.objects.filter(event_name=e_name).get()
+				participant_list=ParticipantLevel.objects.filter(participant_event=E)
+				context={
+					"list":participant_list,
+					"event_name":e_name
+				}
+				return render(request,'leaderboard.html',context)
+		else:
+			return redirect('/login')
 
 def login_page(request):
 	if request.user.is_authenticated:
@@ -47,105 +58,116 @@ def login_page(request):
 			user=authenticate(request,username=username,password=password)
 			if user is not None:
 				login(request,user)
-				#pro=Profile.objects.get(username=username)
 				return redirect('/events')
 			else:
 				context['login']=True
 		return render(request,'login.html',context)
 
 def signup(request):
-	if request.user.is_authenticated:
-		return redirect('/events')
-	else:
-		context={
-		"bool":False,
-		"exist":False
-		}
-		if request.method == 'POST':
-			username = request.POST.get("username")
-			email = request.POST.get("email")
-			branch = request.POST.get("branch")
-			year = request.POST.get("year")
-			college = request.POST.get("college")
-			contact_num = request.POST.get("contact")
-			password = request.POST.get("password")
-			try:
-				new_user=User.objects.create_user(
-					username=username,
-					email=email,
-					password=password
-
-					)
-			except:
-				context['exist']=True
-				return render(request,"quiz_signup.html",context)
-			new=Profile.objects.create(
-				leader=new_user,
-				username=username,
-				email=email,
-				contact_num=contact_num,
-				password=password,
-				branch=branch,
-				year=year,
-				college=college
-				)
-			new.save()
-			login(request,new_user)
-
+	try:
+		org_user=OrganiserProfile.objects.get(organiser_name=request.user.username)
+		return redirect('/organiser')
+	except:
+		if request.user.is_authenticated:
 			return redirect('/events')
 		else:
-			context = {
-				"bool":True
+			context={
+			"bool":False,
+			"exist":False
 			}
+			if request.method == 'POST':
+				username = request.POST.get("username")
+				email = request.POST.get("email")
+				branch = request.POST.get("branch")
+				year = request.POST.get("year")
+				college = request.POST.get("college")
+				contact_num = request.POST.get("contact")
+				password = request.POST.get("password")
+				try:
+					new_user=User.objects.create_user(
+						username=username,
+						email=email,
+						password=password
 
-		return render(request,'quiz_signup.html',context)
+						)
+				except:
+					context['exist']=True
+					return render(request,"quiz_signup.html",context)
+				new=Profile.objects.create(
+					leader=new_user,
+					username=username,
+					email=email,
+					contact_num=contact_num,
+					password=password,
+					branch=branch,
+					year=year,
+					college=college
+					)
+				new.save()
+				login(request,new_user)
+
+				return redirect('/events')
+			else:
+				context = {
+					"bool":True
+				}
+
+			return render(request,'quiz_signup.html',context)
 
 def quiz(request):
-	if request.user.is_authenticated:
-		if request.method == "POST":
-			e_name=request.POST.get('event_name')
-			usr=Profile.objects.get(username=request.user.username)
-			E=Event.objects.filter(event_name=e_name).get()
-			usr.events.add(E)
-			L=ParticipantLevel.objects.filter(participant=usr).filter(participant_event=E)
-			if not L:
-				new_participant_level=ParticipantLevel.objects.create(
-					participant=usr,
-					participant_event=E,
-					level=1,
-					points=0,
-					freeze=False,
-					lastsub=timezone.now()
-					)
+	try:
+		org_user=OrganiserProfile.objects.get(organiser_name=request.user.username)
+		return redirect('/events')
+	except:
+		if request.user.is_authenticated:
+			if request.method == "POST":
+				e_name=request.POST.get('event_name')
+				if e_name is None:
+					return redirect('/events')
+				usr=Profile.objects.get(username=request.user.username)
+				E=Event.objects.filter(event_name=e_name).get()
+				usr.events.add(E)
+				L=ParticipantLevel.objects.filter(participant=usr).filter(participant_event=E)
+				if not L:
+					new_participant_level=ParticipantLevel.objects.create(
+						participant=usr,
+						participant_event=E,
+						level=1,
+						points=0,
+						freeze=False,
+						lastsub=timezone.now()
+						)
 
-			P=ParticipantLevel.objects.filter(participant=usr).filter(participant_event=E).get()
-			Q_level=P.level
-			try:
-				event_question=question_model.objects.filter(question_of_event__event_name=e_name).filter(question_level=Q_level).get()
-			except ObjectDoesNotExist:
-				return redirect('/')
-			if request.POST.get('answer')!=None:
-				ans=request.POST.get('answer')
-				ans1=event_question.correct_ans
-				if (ans.lower())==(ans1.lower()):
-					P.level=P.level+1
-					P.points=P.points+10
-					P.lastsub=timezone.now()
-					P.save()
-			Q_level=P.level
-			try:
-				event_question=question_model.objects.filter(question_of_event__event_name=e_name).filter(question_level=Q_level).get()
-			except ObjectDoesNotExist:
-				return redirect('/')
-			context={
-				"event_name":e_name,
-				"question":event_question,
-				"title":event_question.title,
-				"description":event_question.description
-			}
-			return render(request,"quiz.html",context)
-	else:
-		return redirect('/login')
+				P=ParticipantLevel.objects.filter(participant=usr).filter(participant_event=E).get()
+				Q_level=P.level
+				try:
+					event_question=question_model.objects.filter(question_of_event__event_name=e_name).filter(question_level=Q_level).get()
+				except ObjectDoesNotExist:
+					return redirect('/')
+				if request.POST.get('answer')!=None:
+					ans=request.POST.get('answer')
+					ans1=event_question.correct_ans
+					if (ans.lower())==(ans1.lower()):
+						P.level=P.level+1
+						P.points=P.points+10
+						P.lastsub=timezone.now()
+						P.save()
+				Q_level=P.level
+				try:
+					event_question=question_model.objects.filter(question_of_event__event_name=e_name).filter(question_level=Q_level).get()
+				except ObjectDoesNotExist:
+					return redirect('/')
+				context={
+					"event_name":e_name,
+					"question":event_question,
+					"title":event_question.title,
+					"description":event_question.description
+				}
+				return render(request,"quiz.html",context)
+			else:
+				return redirect('/events')
+		else:
+			return redirect('/login')
 
 def logout_page(request):
 	if request.user.is_authenticated:
@@ -172,7 +194,10 @@ def org_login_page(request):
 		return render(request,'org_signin.html',context)
 
 def org_dash(request):
-	org_user=OrganiserProfile.objects.get(organiser_name=request.user.username)
+	try:
+		org_user=OrganiserProfile.objects.get(organiser_name=request.user.username)
+	except:
+		return redirect('/orglogin')
 	if request.user.is_authenticated and org_user.organiser:
 		events=org_user.organiser_events.all()
 		context={
@@ -184,10 +209,16 @@ def org_dash(request):
 
 
 def org_add_event(request):
-	org_user=OrganiserProfile.objects.get(organiser_name=request.user.username)
+	try:
+		org_user=OrganiserProfile.objects.get(organiser_name=request.user.username)
+	except:
+		return redirect('/orglogin')
 	if request.user.is_authenticated and org_user.organiser:
 		#if request.method == 'GET':
 		#	return render(request, 'AddEvent.html',{})
+		context={
+		'organiser':True
+		}
 		if request.method == 'POST':
 			e_name=request.POST.get('name')
 			e_description=request.POST.get('description')
@@ -211,26 +242,31 @@ def org_add_event(request):
 				new_event.save()
 			except:
 				context={
-				'error':'Some Error'
+				'error':'Some Error',
+				'organiser':True
 				}
 				return render(request, 'OrgDashboard.html', context)
 
 			E=Event.objects.filter(event_name=e_name).get()
 			org_user.organiser_events.add(E)
 			context={
-			'event':e_name
+			'event':e_name,
+			'organiser':True
 			}
 			return render(request, 'AddQuestion.html', context)
-		return render(request, 'AddEvent.html', {})
+		return render(request, 'AddEvent.html', context)
 
 def org_add_question(request):
-	org_user=OrganiserProfile.objects.get(organiser_name=request.user.username)
+	try:
+		org_user=OrganiserProfile.objects.get(organiser_name=request.user.username)
+	except:
+		return redirect('/orglogin')
 	if request.user.is_authenticated and org_user.organiser:
 		if request.method == 'POST':
 			e_name = request.POST.get('eventname')
 			if e_name is None:
 				context={
-				'error':'Try Adding Event First'
+				'bool':True
 				}
 				return render(request, 'AddEvent.html', context)
 			E=Event.objects.filter(event_name=e_name).get()
@@ -252,14 +288,17 @@ def org_add_question(request):
 				new_question.save()
 			except:
 				context={
-				'error':'Some Error'
+				'error':True
 				}
 				return render(request, 'OrgDashboard.html', context)
 			context={
 			'event':e_name
 			}
 			return render(request, 'AddQuestion.html', context)
-
+		elif request.method == 'GET':
+			e_name = request.POST.get('eventname')
+			if e_name is None:
+				return redirect('/addEvent')
 
 
 
@@ -271,7 +310,16 @@ def event_update(request):
 	pass
 
 def contact(request):
-	return render(request,'contact.html', {})
+	try:
+		org_user=OrganiserProfile.objects.get(organiser_name=request.user.username)
+		if request.user.is_authenticated and org_user.organiser:
+			org=True
+	except:
+		org=False
+	context={
+		'organiser':org
+	}
+	return render(request,'contact.html', context)
 
 def testing(request):
 	return render(request,'testing.html',{})

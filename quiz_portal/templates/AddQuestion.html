@@ -3,57 +3,54 @@
 <html>
 <head>
 	<title>
-		Add Event
+		Add Question
 	</title>
 	<meta content="width=device-width, initial-scale=1" name="viewport" />
 	<link rel="stylesheet" type="text/css" href="{% static 'css\dashboard.css' %}">
 	<link rel="stylesheet" type="text/css" href="{% static 'css\signup.css' %}">
 </head>
 <body>
-	<!--{% if bool %}
-		<script type="text/javascript">
-			alert("Wrong Sign up ID !!")
-		</script>
-	{% endif %}-->
 
-
-	{% if exist %}
-		<script type="text/javascript">
-			alert("Username Exists !!")
-		</script>
-	{% endif %}
 <div class="box">
 	<div class="top">
 		<img src="/static/img/mmil_logo.jpg" width="50px"><a href="/">MMIL</a>
+		{% if request.user.is_authenticated %}
 		<button class="button" onclick="logout()">Log Out</button>
+		{% else %}
 		<button onclick="login()">Log In</button>
 		<button class="signn" onclick="signup()">Sign Up</button>
+		{% endif %}
 	</div>
 	<div class="center">
+		{% if organiser %}
 		<div class="info-1">
-			<a href="/" class="">About</a>
+			<a href='/organiser' class="event">Dashboard</a>
 		</div>
+		{% else %}
+		<div class="info-1">
+			<a href='/' class="event">About</a>
+		</div>
+		{% endif %}
 		<div class="info-1">
 			<a href='/events' class="">Live Events</a>
 		</div>		
 		<div class="info-1">
 			<a href='/contact' class="contact">contact</a>
 		</div>
-		<!-- <a href="#">About</a> -->
 	</div>
 	<div class="bottom">
 		<div class="signupbox">
-			<!-- <form method="POST" action="/addQuestion/"> -->
-			<form>
+			<form method="POST" action="/addQuestion/">
+				{% csrf_token %}
 				<input type="text" name="title" required="" placeholder="Question Title">
 				<input type="text" name="question" required="" placeholder="Question">
 				<input type="text" name="answer" required="" placeholder="Answer">
 				<input type="hidden" name="eventname" value="{{ event }}">
 				<input type="submit" name="submit" value="Submit">	
 			</form>
+			<a href="/organiser/">End Adding Questions</a>
 		</div>
 	</div>
-	<a href="/organiser/">End Adding Questions</a>
 </div>
 <script src="{% static 'js/app.js' %}"></script>
 </body>

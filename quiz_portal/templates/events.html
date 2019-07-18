@@ -25,9 +25,15 @@
 		{% endif %}
 	</div>
 	<div class="center">
+		{% if organiser %}
+		<div class="info-1">
+			<a href='/organiser' class="event">Dashboard</a>
+		</div>
+		{% else %}
 		<div class="info-1">
 			<a href='/' class="event">About</a>
 		</div>
+		{% endif %}
 		<div class="info-1 active">
 			<a href="/events" class="about">Live Events</a>
 		</div>	

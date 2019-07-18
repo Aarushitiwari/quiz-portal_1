@@ -10,16 +10,9 @@
 	<link rel="stylesheet" type="text/css" href="{% static 'css\addevent.css' %}">
 </head>
 <body>
-	<!--{% if bool %}
+	{% if bool %}
 		<script type="text/javascript">
-			alert("Wrong Sign up ID !!")
-		</script>
-	{% endif %}-->
-
-
-	{% if exist %}
-		<script type="text/javascript">
-			alert("Username Exists !!")
+			alert("Add Event First !!")
 		</script>
 	{% endif %}
 <div class="box">
@@ -33,9 +26,15 @@
 		{% endif %}
 	</div>
 	<div class="center">
+		{% if organiser %}
 		<div class="info-1">
-			<a href="/" class="">About</a>
+			<a href='/organiser' class="event">Dashboard</a>
 		</div>
+		{% else %}
+		<div class="info-1">
+			<a href='/' class="event">About</a>
+		</div>
+		{% endif %}
 		<div class="info-1">
 			<a href='/events' class="">Live Events</a>
 		</div>	
@@ -79,7 +78,6 @@
 				<label>Ending Date:</label>
 				<input type="Date" name="enddate" required="" />
 			</div>
-				<!-- <label>Name</label><input type="text" name=""> -->
 			<div class="info">
 				<label>Starting time:</label>
 				<input type="time" name="starttime" required="" />
@@ -87,7 +85,6 @@
 			<div class="info">
 				<label>Ending time:</label>
 				<input type="time" name="endtime" required="" />
-				<!-- <label>Name</label><input type="text" name=""> -->
 			</div>
 				<input type="submit" name="submit" value="Submit">
 			</form>	

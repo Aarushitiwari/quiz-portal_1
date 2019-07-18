@@ -63,7 +63,7 @@ i:active{
 	font-size: 40px;
 }
 
-@media screen and (min-width: 200px) and (max-width: 379px){
+@media screen and (min-width: 200px) and (max-width: 767px){
 	.block {
 		font-size: 10px;
 	}
@@ -71,7 +71,7 @@ i:active{
 }
 
 
-@media screen and (min-width: 380px) and (max-width: 768px){
+@media screen /*and (min-width: 380px) and*/ (min-width: 768px){
 	.block {
 		font-size: 15px;
 	}

@@ -44,7 +44,15 @@
 			<div class="innerblock" title="Event End Date">{{ i.event_end_date }}</div>
 			<div class="innerblock" title="Event Start Time">{{ i.event_start_time }}</div>
 			<div class="innerblock" title="Event End Time">{{ i.event_end_time }}</div>
-			<div class="innerblock"><a href="#" class="icon1"><i class="fa fa-edit"  title="Update"></i></a></div>
+			<div class="innerblock">
+				<!--<a href="#" class="icon1"><i class="fa fa-edit"  title="Update"></i></a>-->
+				<form method="POST" action="/update/">
+				{% csrf_token %}
+					<input type="hidden" name="eventname" value="{{ i.event_name }}" />
+					<button type="submit" class="icon1"><i class="fa fa-edit" title="Update"></i></button>
+				</form>
+
+			</div>
 			<div  class="btn-delete" class="innerblock"><a onclick="swap()" href="#" class="icon2"><i class="fa fa-times" aria-hidden="true" title="Delete"></i></a></div>
 			<!-- <div>{{ i.event_name }}</div>
 		 <div>{{ i.event_description }}</div> -->

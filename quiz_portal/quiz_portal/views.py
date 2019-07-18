@@ -307,7 +307,22 @@ def event_delete(request):
 
 
 def event_update(request):
-	pass
+	try:
+		org_user=OrganiserProfile.objects.get(organiser_name=request.user.username)
+	except:
+		return redirect('/orglogin')
+	if request.user.is_authenticated and org_user.organiser:
+		if request.method == 'POST':
+			e_name = request.POST.get('eventname')
+			if e_name is None:
+				return redirect('/organiser')
+				
+			context={
+			'event':e_name,
+			'organiser':True
+			}
+			return render(request, 'AddQuestion.html', context)
+	
 
 def contact(request):
 	try:

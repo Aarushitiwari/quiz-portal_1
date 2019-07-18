@@ -50,15 +50,6 @@
 		<p>Organiser - {{ organiser_name }}</p>
 		{% if i.event_start_date == now_d and now >= i.event_start_time|time:"H:i" %}
 			<p>Live</p>
-		{% elif i.event_end_date == now_d and now <= i.event_end_time|time:"H:i" %}
-			<p>Live</p>
-		{% elif i.event_start_date < now_d and now_d < i.event_end_date %}		
-			<p>Live</p>
-		{% elif i.event_start_date > now_d %}
-			<p>Will be Live Soon</p>	
-		{% else %}
-			<p>Event Expired</p>
-		{% endif %}
 		<form method="POST" action="/quiz/">
 			{% csrf_token %}
 			<div>
@@ -66,6 +57,29 @@
 				<input type="submit" name="nothing" value="Join Now">
 			</div>
 		</form>
+		{% elif i.event_end_date == now_d and now <= i.event_end_time|time:"H:i" %}
+			<p>Live</p>
+		<form method="POST" action="/quiz/">
+			{% csrf_token %}
+			<div>
+				<input type="hidden" name="event_name" value="{{ i.event_name }}">
+				<input type="submit" name="nothing" value="Join Now">
+			</div>
+		</form>
+		{% elif i.event_start_date < now_d and now_d < i.event_end_date %}		
+			<p>Live</p>
+		<form method="POST" action="/quiz/">
+			{% csrf_token %}
+			<div>
+				<input type="hidden" name="event_name" value="{{ i.event_name }}">
+				<input type="submit" name="nothing" value="Join Now">
+			</div>
+		</form>
+		{% elif i.event_start_date > now_d %}
+			<p>Will be Live Soon</p>	
+		{% else %}
+			<p>Event Expired</p>
+		{% endif %}
 	</div>
 	{% endfor %}
 

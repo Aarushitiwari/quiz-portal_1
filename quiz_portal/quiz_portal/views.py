@@ -21,9 +21,15 @@ def events(request):
 			org=True
 	except:
 		org=False
+	now_time = datetime.datetime.now().strftime('%H:%M')
+	now_date = datetime.datetime.now().date()
+
 	context = {
 		'eve':E,
-		'organiser':org
+		'organiser':org,
+		'organiser_name':org_user,
+		'now':now_time,
+		'now_d':now_date
 	}
 	return render(request,'events.html',context)
 
@@ -214,8 +220,6 @@ def org_add_event(request):
 	except:
 		return redirect('/orglogin')
 	if request.user.is_authenticated and org_user.organiser:
-		#if request.method == 'GET':
-		#	return render(request, 'AddEvent.html',{})
 		context={
 		'organiser':True
 		}

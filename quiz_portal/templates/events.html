@@ -42,16 +42,23 @@
 		</div>
 		<!-- <a href="#">About</a> -->
 	</div>
-	
 	<div class="list">
 	{% for i in eve %}	
 	<div class="events">
 		<div class="header">{{ i.event_name }}</div>
 		<p>{{ i.event_description }}</p>
-		<span class="new"><a href="#" class="links"><i class="fas fa-globe"></i></a>
-			<span class="links">{{ i.event_url }}
-			</span>
-		</span>
+		<p>Organiser - {{ organiser_name }}</p>
+		{% if i.event_start_date == now_d and now >= i.event_start_time|time:"H:i" %}
+			<p>Live</p>
+		{% elif i.event_end_date == now_d and now <= i.event_end_time|time:"H:i" %}
+			<p>Live</p>
+		{% elif i.event_start_date < now_d and now_d < i.event_end_date %}		
+			<p>Live</p>
+		{% elif i.event_start_date > now_d %}
+			<p>Will be Live Soon</p>	
+		{% else %}
+			<p>Event Expired</p>
+		{% endif %}
 		<form method="POST" action="/quiz/">
 			{% csrf_token %}
 			<div>

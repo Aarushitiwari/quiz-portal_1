@@ -149,7 +149,10 @@ def quiz(request):
 				try:
 					event_question=question_model.objects.filter(question_of_event__event_name=e_name).filter(question_level=Q_level).get()
 				except ObjectDoesNotExist:
-					return redirect('/')
+					context={
+					'event_name':e_name,
+					}
+					return render(request, 'completed.html', context)
 				if request.POST.get('answer')!=None:
 					ans=request.POST.get('answer')
 					ans1=event_question.correct_ans
@@ -162,7 +165,10 @@ def quiz(request):
 				try:
 					event_question=question_model.objects.filter(question_of_event__event_name=e_name).filter(question_level=Q_level).get()
 				except ObjectDoesNotExist:
-					return redirect('/')
+					context={
+					'event_name':e_name,
+					}
+					return render(request, 'completed.html', context)
 				context={
 					"event_name":e_name,
 					"question":event_question,

@@ -49,14 +49,14 @@ input{
 	word-break: break-all;
 }
 
-input.time {
+/*input.time {
 	width: 40%;
 	text-align: center;
-}
+}*/
 
-::placeholder {
+/*::placeholder {
 	text-align:center;
-}
+}*/
 
 
 input[type="submit"]{

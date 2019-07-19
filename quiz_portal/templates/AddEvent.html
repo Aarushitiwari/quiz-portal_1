@@ -10,6 +10,11 @@
 	<link rel="stylesheet" type="text/css" href="{% static 'css\addevent.css' %}">
 </head>
 <body>
+	{% if error %}
+		<script type="text/javascript">
+			alert("Some Error has Occurred !!")
+		</script>
+	{% endif %}
 	{% if bool %}
 		<script type="text/javascript">
 			alert("Add Event First !!")
@@ -69,7 +74,7 @@
 			<div class="info">
 				<label>Description of Event:</label>
 				<!-- <input type="text" name="description" required="" /> -->
-				<textarea name="desc" cols="22" rows="5"></textarea>
+				<textarea name="description" cols="22" rows="5"></textarea>
 			</div>
 			<div class="info">
 				<label>Starting Date: </label>

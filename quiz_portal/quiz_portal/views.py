@@ -246,10 +246,10 @@ def org_add_event(request):
 				new_event.save()
 			except:
 				context={
-				'error':'Some Error',
+				'error':True,
 				'organiser':True
 				}
-				return render(request, 'OrgDashboard.html', context)
+				return render(request, 'AddEvent.html', context)
 
 			E=Event.objects.filter(event_name=e_name).get()
 			org_user.organiser_events.add(E)
@@ -321,7 +321,7 @@ def event_delete(request):
 			context={
 			'deleted':True
 			}
-			return render(request,'OrgDashboard.html',context)
+			return redirect('/organiser')
 
 
 

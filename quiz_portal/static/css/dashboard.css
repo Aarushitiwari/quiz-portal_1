@@ -31,7 +31,6 @@ body{
 	transform: translate(-50%,-50%);
 	width:85%;
 	height:95%;
-	overflow-y: scroll;
 }
 .top{
 	margin:10px;
@@ -97,10 +96,7 @@ body{
 	.info-1 a{
 		font-size: 17.5px;
 }
-	html{
-		overflow-y: scroll; 
-}
-	.bottom{
+.box{
 		overflow-y: scroll;
 	}
 }

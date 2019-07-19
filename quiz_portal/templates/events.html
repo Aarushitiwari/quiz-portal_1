@@ -76,6 +76,8 @@
 			</div>
 		</form>
 		{% elif i.event_start_date > now_d %}
+			<p>Will be Live Soon</p>
+		{% elif i.event_end_time|time:"H:i" > now and i.event_start_date == now_d %}
 			<p>Will be Live Soon</p>	
 		{% else %}
 			<p>Event Expired</p>

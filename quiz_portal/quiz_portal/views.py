@@ -27,7 +27,7 @@ def events(request):
 	context = {
 		'eve':E,
 		'organiser':org,
-		'organiser_name':org_user,
+		#'organiser_name':org_user,
 		'now':now_time,
 		'now_d':now_date
 	}

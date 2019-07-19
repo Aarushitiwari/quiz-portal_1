@@ -1,10 +1,10 @@
 .signupbox{
 	/*margin: 10px auto;*/
-	position: absolute;
+	/*position: relative;
 	left: 50%;
-	top: 55%;
+	top: 80%;
 	transform: translate(-50%,-50%);
-	/*display: block;*/
+	*//*display: block;*/
 	background-color: rgba(204,204,204,.4);
 	width: 30%;
 	padding-bottom: 20px;
@@ -13,7 +13,7 @@
 	text-align: center;
 	padding-top: 20px;
 	/*min-height: auto;*/
-	/*margin-top: 50px;*/
+	margin: 20px auto;
 }
 .signupbox:hover{
 	background-image: linear-gradient(to bottom,rgba(255,127,80,1),rgba(255,127,80,.3));
@@ -69,16 +69,8 @@ input[type="submit"]:hover{
 }
 
 @media screen and (max-width: 500px){
-/*	body{
-		overflow-y: scroll;
-	}*/
 	.signupbox{
-	top:65%;
 	width: 90%;
-	/*padding-bottom: 200px;*/
-	/*margin-bottom: 10px;*/
-	/*padding-bottom: 10px;*/
-	/*height: 50%;*/
 	overflow-y: scroll;
 }
 	input[type="submit"]{
@@ -86,19 +78,10 @@ input[type="submit"]:hover{
 }
 
 }
-@media screen and (min-width: 501px ) and (max-width:768px) {
+@media screen and (min-width: 501px ) and (max-width:768px){
 	.signupbox{
-	top:55%;
 	width: 60%;
-	padding-bottom: 60px;
-	/*margin-bottom: 10px;*/
-	/*padding-bottom: 10px;*/
-	/*height: 50%;*/
 	overflow-y: scroll;
-}
-	.signupbox input{
-	margin-top:60px;
-	/*margin-bottom: -40px;*/
 }
 	input[type="submit"]{
 	width:30%;
@@ -107,28 +90,13 @@ input[type="submit"]:hover{
 }
 @media screen and (min-width:769px) and  (max-width: 1024px){
 	.signupbox{
-	top: 55%;
+	top: 65%;
 	width: 50%;
-	padding-bottom: 60px;
-	/*margin-bottom: 10px;*/
-	/*padding-bottom: 10px;*/
-	/*height: 50%;*/
-	/*overflow-y: scroll;*/
-}
-	.signupbox input{
-	margin-top:60px;
-	margin-bottom: -40px;
 }
 	input[type="submit"]{
 	width:30%;
 }
-
 }
-
-
-
-
-
 
 
 

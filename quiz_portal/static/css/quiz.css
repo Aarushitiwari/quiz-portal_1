@@ -168,6 +168,9 @@ input[type=text]:focus{
 		margin: 3% auto;
 	}
 
+	.info-1 button, .info-1 a, .info-2 a, .info-2 p {
+		font-size: 20px;
+	}
 
 }
 

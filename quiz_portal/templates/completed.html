@@ -8,7 +8,7 @@
 	<meta content="width=device-width, initial-scale=1" name="viewport" />
 	<!-- <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
 	<link rel="stylesheet" type="text/css" href="{% static 'css/dashboard.css' %}">
-	<link rel="stylesheet" type="text/css" href="{% static 'css/login.css' %}">
+	<!-- <link rel="stylesheet" type="text/css" href="{% static 'css/login.css' %}"> -->
 	<!-- <link rel="stylesheet" type="text/css" href="events.css"> -->
 	<link rel="stylesheet" type="text/css" href="{% static 'css/quiz.css' %}">
 	<link href="https://fonts.googleapis.com/css?family=Work+Sans:500&display=swap" rel="stylesheet">
@@ -26,20 +26,20 @@
 	</div>
 	<div class="center">
 		<div class="info-1">
-		<a href="/events" class="about">Live Events</a>
+		<a href="/events" class="about" style="font-size: 17.5px;">Live Events</a>
 		</div>
-		<div class="info-2">
-			<p class="about">{{ event_name }}</p>
+		<div class="info-1">
+			<p class="about" style="font-size: 20px;">{{ event_name }}</p>
 		</div>	
 		<div class="info-1">
 			<form method="POST" action="/leaderboard/">
 				{% csrf_token %}
 				<input type="hidden" name="event_name" value="{{ event_name }}">
-				<button type="submit" class="btn1">LEADERBOARD</button>
+				<button type="submit" class="btn1" style="font-size: 17.5px;">LEADERBOARD</button>
 			</form></div>
 		<!-- <a href="#">About</a> -->
 	</div>
-	<p>Completed</p>
+	<p style="text-align: center;font-size: 30px;margin-top: 100px;">Completed!!!!</p>
 	<!--<div class="quizzes">
 		<div class="quiz">
 			<h3>{{ title }}</h3>

@@ -12,6 +12,7 @@
 	border-radius: 10px;
 	text-align: center;
 	padding-top: 20px;
+	/*min-height: auto;*/
 	/*margin-top: 50px;*/
 }
 .signupbox:hover{
@@ -68,18 +69,17 @@ input[type="submit"]:hover{
 }
 
 @media screen and (max-width: 500px){
+/*	body{
+		overflow-y: scroll;
+	}*/
 	.signupbox{
-	top:60%;
+	top:65%;
 	width: 90%;
-	padding-bottom: 60px;
+	/*padding-bottom: 200px;*/
 	/*margin-bottom: 10px;*/
 	/*padding-bottom: 10px;*/
 	/*height: 50%;*/
-	/*overflow-y: scroll;*/
-}
-	.signupbox input{
-	margin-top:60px;
-	margin-bottom: -40px;
+	overflow-y: scroll;
 }
 	input[type="submit"]{
 	width:30%;
@@ -94,11 +94,11 @@ input[type="submit"]:hover{
 	/*margin-bottom: 10px;*/
 	/*padding-bottom: 10px;*/
 	/*height: 50%;*/
-	/*overflow-y: scroll;*/
+	overflow-y: scroll;
 }
 	.signupbox input{
 	margin-top:60px;
-	margin-bottom: -40px;
+	/*margin-bottom: -40px;*/
 }
 	input[type="submit"]{
 	width:30%;

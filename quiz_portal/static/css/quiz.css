@@ -154,6 +154,10 @@ input[type=text]:focus{
 		width: 70%;
 		margin-left: 15%;
 	}
+
+	.info-1 button, .info-1 a, .info-2 a, .info-2 p {
+		font-size: 20px;
+	}
 }
 
 

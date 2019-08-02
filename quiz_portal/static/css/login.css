@@ -15,6 +15,14 @@
 	/*min-height: auto;*/
 	margin: 20px auto;
 }
+@font-face{
+	font-family: arca;
+	src:url('/static/fonts/Arca.otf');
+}
+@font-face{
+	font-family: mntl;
+	src:url('/static/fonts/ntailu.ttf');
+}
 .signupbox:hover{
 	background-image: linear-gradient(to bottom,rgba(255,127,80,1),rgba(255,127,80,.3));
 }
@@ -48,7 +56,7 @@ input[type="submit"]{
 	width:30%;
 	background-image: linear-gradient(to bottom,rgba(255,127,80,1),rgba(255,127,80,.7));
 	cursor: pointer;
-	font-family: mntl;
+	font-family: arca;
 	font-weight: 600;
 	transition:.5s;
 	/*background-color: #ff6666;*/

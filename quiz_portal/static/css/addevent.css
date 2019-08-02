@@ -48,16 +48,9 @@ input{
 	/*font-size: 15px;*/
 	word-break: break-all;
 }
-
-/*input.time {
-	width: 40%;
-	text-align: center;
-}*/
-
-/*::placeholder {
-	text-align:center;
-}*/
-
+.up{
+	vertical-align: top;
+}
 
 input[type="submit"]{
 	width:25%;
@@ -84,7 +77,6 @@ input[type="submit"]:hover{
 	.addevent {
 		width: 60%;
 	}
-
 	input {
 		width: 90%;
 	}	

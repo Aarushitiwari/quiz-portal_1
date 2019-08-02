@@ -76,6 +76,9 @@ i:active{
 	.block {
 		font-size: 10px;
 	}
+	.container{
+		height: 55vh;
+	}
 
 }
 

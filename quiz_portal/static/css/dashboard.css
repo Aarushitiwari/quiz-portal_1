@@ -36,7 +36,7 @@ body{
 	margin:10px;
 }
 .top button{
-	font-family: mntl;
+	font-family: arca;
 	font-weight: 600;
 	cursor: pointer;
 	float: right;
@@ -70,7 +70,7 @@ body{
 	text-decoration: none;
 	color:black;
 	font-size: 28px;
-	font-family: mntl;
+	font-family: arca;
 	text-transform:uppercase;
 }
 .info-1 a:hover{
@@ -92,9 +92,10 @@ body{
 @media(max-width: 500px){
 	.top button{
 		width:60px;
+		font-size: 10px;
 }
 	.info-1 a{
-		font-size: 17.5px;
+		font-size: 13px;
 }
 .box{
 		overflow-y: scroll;

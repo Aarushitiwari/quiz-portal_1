@@ -46,7 +46,6 @@
 	<div class="events">
 		<div class="header">{{ i.event_name }}</div>
 		<p>{{ i.event_description }}</p>
-		<p>Organiser - {{ organiser_name }}</p>
 		{% if i.event_start_date == now_d and now >= i.event_start_time|time:"H:i" and i.event_end_date == now_d and now <= i.event_end_time|time:"H:i" %}
 			<p>Live till {{ i.event_end_date }} {{ i.event_end_time|time:"H:i" }}</p>
 		<form method="POST" action="/quiz/">

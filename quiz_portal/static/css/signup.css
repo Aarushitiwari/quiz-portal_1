@@ -1,4 +1,3 @@
-
 .signupbox{
 	margin: 20px auto;
 	/*position: absolute;
@@ -48,8 +47,9 @@ input[type="submit"]:hover{
 	color: black;
 	font-family: mntl;
 }
-.addques{
-	color: black
+a.addques{
+	color: black;
+	font-family: arca;
 }
 .addques:hover{
 	color:blue;

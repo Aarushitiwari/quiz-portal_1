@@ -31,7 +31,7 @@ urlpatterns = [
     path('organiser/', org_dash),
     path('addEvent/', org_add_event),
     path('addQuestion/', org_add_question),
-    path('deleteEvent/', event_delete),
+    path('deleteEvent/', event_delete,name='deleteEvent'),
     path('update/', event_update),
     path('contact/', contact),
     path('testing/',testing)

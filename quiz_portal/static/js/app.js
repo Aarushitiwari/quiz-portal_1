@@ -14,22 +14,22 @@ function logout() {
 	location.href='/logout';
 }
 
-function swap() {
-	swal({
-  title: "Are you sure?",
-  text: "Once deleted, you will not be able to recover this event!",
-  icon: "warning",
-  buttons: true,
-  dangerMode: true,
-})
-.then((willDelete) => {
-  if (willDelete) {
-    swal("Your event has been deleted!", {
-      icon: "success",
-    });
-  } else {
-    swal("Your event is not deleted!");
-  }
-});
-}
+//function swap() {
+//	swal({
+//  title: "Are you sure?",
+//  text: "Once deleted, you will not be able to recover this event!",
+//  icon: "warning",
+//  buttons: true,
+//  dangerMode: true,
+//})
+//.then((willDelete) => {
+//  if (willDelete) {
+//    swal("Your event has been deleted!", {
+//     icon: "success",
+//    });
+//  } else {
+//    swal("Your event is not deleted!");
+//  }
+//});
+//}
 

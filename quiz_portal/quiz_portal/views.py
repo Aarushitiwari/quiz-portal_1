@@ -7,6 +7,8 @@ from questions.models import question_model
 from django.utils import timezone
 from django.core.exceptions import ObjectDoesNotExist
 import datetime
+from django.views.decorators.csrf import csrf_exempt
+from django.http import JsonResponse
 
 User=get_user_model()
 
@@ -311,7 +313,7 @@ def org_add_question(request):
 				return redirect('/addEvent')
 
 
-
+@csrf_exempt
 def event_delete(request):
 	try:
 		org_user=OrganiserProfile.objects.get(organiser_name=request.user.username)
@@ -325,7 +327,7 @@ def event_delete(request):
 			instance = Event.objects.filter(event_name=e_name).get()
 			instance.delete()
 			context={
-			'deleted':True
+			'msg':'Deleted the Event',
 			}
 			return redirect('/organiser')
 

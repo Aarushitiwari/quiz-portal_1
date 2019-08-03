@@ -40,7 +40,6 @@
 		<div class="info-1">
 			<a href='/contact' class="contact">contact</a>
 		</div>
-		<!-- <a href="#">About</a> -->
 	</div>
 	<div class="list">
 	{% for i in eve %}	
@@ -48,55 +47,67 @@
 		<div class="header">{{ i.event_name }}</div>
 		<p>{{ i.event_description }}</p>
 		<p>Organiser - {{ organiser_name }}</p>
-		{% if i.event_start_date == now_d and now >= i.event_start_time|time:"H:i" %}
-			<p>Live</p>
+		{% if i.event_start_date == now_d and now >= i.event_start_time|time:"H:i" and i.event_end_date == now_d and now <= i.event_end_time|time:"H:i" %}
+			<p>Live till {{ i.event_end_date }} {{ i.event_end_time|time:"H:i" }}</p>
 		<form method="POST" action="/quiz/">
 			{% csrf_token %}
 			<div>
 				<input type="hidden" name="event_name" value="{{ i.event_name }}">
+				{% if organiser %}
+				<p><b>Log in as a Participant to Join</b></p>
+				{% else %}
 				<input type="submit" name="nothing" value="Join Now">
-			</div>
-		</form>
-		{% elif i.event_end_date == now_d and now <= i.event_end_time|time:"H:i" %}
-			<p>Live</p>
-		<form method="POST" action="/quiz/">
-			{% csrf_token %}
-			<div>
-				<input type="hidden" name="event_name" value="{{ i.event_name }}">
-				<input type="submit" name="nothing" value="Join Now">
+				{% endif %}
 			</div>
 		</form>
 		{% elif i.event_start_date < now_d and now_d < i.event_end_date %}		
-			<p>Live</p>
+			<p>Live till {{ i.event_end_date }} {{ i.event_end_time|time:"H:i" }}</p>
 		<form method="POST" action="/quiz/">
 			{% csrf_token %}
 			<div>
 				<input type="hidden" name="event_name" value="{{ i.event_name }}">
+				{% if organiser %}
+				<p><b>Log in as a Participant to Join</b></p>
+				{% else %}
 				<input type="submit" name="nothing" value="Join Now">
+				{% endif %}
+			</div>
+		</form>
+		{% elif i.event_start_date < now_d and now_d == i.event_end_date and now <= i.event_end_time|time:"H:i" %}		
+			<p>Live till {{ i.event_end_date }} {{ i.event_end_time|time:"H:i" }}</p>
+		<form method="POST" action="/quiz/">
+			{% csrf_token %}
+			<div>
+				<input type="hidden" name="event_name" value="{{ i.event_name }}">
+				{% if organiser %}
+				<p><b>Log in as a Participant to Join</b></p>
+				{% else %}
+				<input type="submit" name="nothing" value="Join Now">
+				{% endif %}
+			</div>
+		</form>
+		{% elif i.event_start_date == now_d and now_d < i.event_end_date and now >= i.event_start_time|time:"H:i" %}		
+			<p>Live till {{ i.event_end_date }} {{ i.event_end_time|time:"H:i" }}</p>
+		<form method="POST" action="/quiz/">
+			{% csrf_token %}
+			<div>
+				<input type="hidden" name="event_name" value="{{ i.event_name }}">
+				{% if organiser %}
+				<p><b>Log in as a Participant to Join</b></p>
+				{% else %}
+				<input type="submit" name="nothing" value="Join Now">
+				{% endif %}
 			</div>
 		</form>
 		{% elif i.event_start_date > now_d %}
 			<p>Will be Live Soon</p>
 		{% elif i.event_end_time|time:"H:i" > now and i.event_start_date == now_d %}
-			<p>Will be Live Soon</p>	
+			<p>Will be Live Soon</p>
 		{% else %}
 			<p>Event Expired</p>
 		{% endif %}
 	</div>
 	{% endfor %}
-
-	<!--<div class="events">
-		<div class="header">Event 2</div>
-		<p>Un message logiciel derve indiquant qu'il s'est produit quelque chose.</p>
-		<a href="#" class="links"><i class="fas fa-globe"></i></a><span class="links">http:///www.kmax.com/</span>
-		<div><a href="/quiz"><button type="button" class="btn btn-secondary">Join Now</button></a></div>
-	</div>
-	<div class="events">
-		<div class="header">Event 2</div>
-		<p>Un message logiciel derve indiquant qu'il s'est produit quelque chose.</p>
-		<a href="#" class="links"><i class="fas fa-globe"></i></a><span class="links">http:///www.kmax.com/</span>
-		<div><a href="/quiz"><button type="button" class="btn btn-secondary">Join Now</button></a></div>
-	</div>-->
 </div>
 </div>
 
